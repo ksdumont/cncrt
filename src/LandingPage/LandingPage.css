@@ -1,0 +1,38 @@
+.landingNav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.landingNav > a {
+  margin: 0 10px;
+}
+.landingTitle {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 56px;
+}
+.description {
+  margin: 50px 20px;
+  text-align: center;
+  border: solid 1px black;
+  padding: 8px;
+}
+.landingSearch {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.landingSearchText {
+  margin: 10px 120px;
+  padding: 5px;
+  width: 180px;
+  border: solid 1px black;
+}
+.landingSearchButton {
+  margin: 10px 120px;
+  padding: 5px;
+  width: 80px;
+  font-size: 16px;
+  border: solid 1px black;
+}
