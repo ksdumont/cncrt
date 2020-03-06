@@ -14,6 +14,7 @@ class Register extends Component {
   }
   handleSubmit = e => {
     e.preventDefault();
+    this.props.history.push(`/profile`)
   };
   handleNameChange = e => {
     const name = e.target.value;

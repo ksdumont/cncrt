@@ -6,13 +6,14 @@ import LandingPage from "./LandingPage/LandingPage";
 import Profile from "./Profile/Profile";
 import ResultsPage from "./ResultsPage/ResultsPage";
 import CncrtContext from "./CncrtContext";
+import store from "./store"
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      artists: []
+      artists: store
     };
   }
   render() {

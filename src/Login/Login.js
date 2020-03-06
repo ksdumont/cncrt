@@ -12,6 +12,7 @@ class Login extends Component {
   }
   handleSubmit = e => {
     e.preventDefault();
+    this.props.history.push(`/profile`);
   };
   handleUserNameChange = e => {
     const username = e.target.value;

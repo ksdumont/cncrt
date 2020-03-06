@@ -1,0 +1,35 @@
+.imageName {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+.imageName > img {
+  height: 100px;
+  width: 100px;
+  margin: 10px;
+}
+.imageName > h1 {
+  font-size: 36px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bio,
+.music,
+.website,
+.video,
+.rate,
+.location,
+.contact,
+.travel-distance {
+  font-weight: bold;
+}
+.updateButton {
+  margin: 10px auto;
+  font-size: 14px;
+  padding: 5px 10px;
+  border: solid 1px black;
+}
