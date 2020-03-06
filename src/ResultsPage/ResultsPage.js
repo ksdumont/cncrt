@@ -15,8 +15,7 @@ class ResultsPage extends Component {
     e.preventDefault();
   };
   handleClick = id => {
-    console.log(id);
-    this.props.history.push("/profile/:id");
+    this.props.history.push(`/results/${id}`);
   };
   render() {
     return (
@@ -30,9 +29,8 @@ class ResultsPage extends Component {
         <section className="results">
           <ul className="resultsList">
             {this.context.artists.map(artist => (
-              <li onClick={() => this.handleClick(artist.id)}>
+              <li key={artist.id} onClick={() => this.handleClick(artist.id)}>
                 <Artist
-                  key={artist.id}
                   id={artist.id}
                   name={artist.name}
                   image={artist.image}

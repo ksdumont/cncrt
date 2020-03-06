@@ -1,0 +1,33 @@
+.imageName {
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+}
+.imageName > img {
+  height: 180px;
+  width: 180px;
+  margin: 5px;
+}
+.imageName > h1 {
+  font-size: 46px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+    text-align: center;
+    width: 90%;
+}
+.bio,
+.music,
+.website,
+.video,
+.rate,
+.location,
+.contact,
+.travel-distance {
+  font-weight: bold;
+}
+
