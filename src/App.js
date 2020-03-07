@@ -26,7 +26,7 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/results" component={ResultsPage} />
-              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/profile/:artistId" component={Profile} />
               <Route exact path="/results/:artistId" component={ResultsArtist} />
               <Route exact path="/" component={LandingPage} />
             </Switch>
