@@ -19,6 +19,7 @@
 .profile-form > input {
   padding: 10px;
   border: solid 1px black;
+  font-size: 16px;
 }
 .profileSubmitButton {
   margin: 50px;

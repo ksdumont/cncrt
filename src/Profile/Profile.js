@@ -22,9 +22,43 @@ class Profile extends Component {
       travel: true,
       contact: ""
     };
+    console.log(this.state)
   }
   handleSubmit = e => {
     e.preventDefault();
+    const {
+      name,
+      email,
+      username,
+      password,
+      image,
+      bio,
+      website,
+      music,
+      video,
+      rate,
+      location,
+      travel,
+      contact
+    } = this.state;
+    const updatedUserProfile = {
+      image,
+      bio,
+      website,
+      music,
+      video,
+      rate,
+      location,
+      travel,
+      contact
+    };
+    const artistFind = this.context.artists.find(
+      artist => artist.id == this.props.match.params.artistId
+    );
+    const artistUpdate = {...artistFind, ...updatedUserProfile}
+    this.context.artists = [...this.context.artists.filter(artist => artist.id !== artistFind.id), artistUpdate]
+    console.log(this.context.artists)
+    this.props.history.push(`/results/${artistFind.id}`);
   };
   handleNameChange = e => {
     const name = e.target.value;
@@ -102,6 +136,9 @@ class Profile extends Component {
     const currentArtist = this.context.artists.find(
       artist => artist.id == this.props.match.params.artistId
     );
+    console.log(this.context.artists)
+    console.log(currentArtist)
+    console.log(this.state)
     return (
       <div className="profile">
         <Link to="/">CNCRT</Link>
@@ -111,28 +148,32 @@ class Profile extends Component {
           <input
             type="text"
             name="name"
-            value={this.state.name}
+            value={currentArtist.name || this.state.name}
+            placeholder={currentArtist.name}
             onChange={this.handleNameChange}
           />
           <label>Email:</label>
           <input
             type="email"
             name="email"
-            value={this.state.email}
+            value={currentArtist.email || this.state.email}
+            placeholder={currentArtist.email}
             onChange={this.handleEmailChange}
           />
           <label>Username:</label>
           <input
             type="text"
             name="username"
-            value={this.state.username}
+            value={currentArtist.username || this.state.username}
+            placeholder={currentArtist.username}
             onChange={this.handleUserNameChange}
           />
           <label>Password:</label>
           <input
             type="password"
             name="password"
-            value={this.state.password}
+            value={currentArtist.password || this.state.password}
+            placeholder={currentArtist.password}
             onChange={this.handlePasswordChange}
           />
           <label>Link to Image:</label>
@@ -153,7 +194,7 @@ class Profile extends Component {
           />
           <label>Website:</label>
           <input
-            type="text"
+            type="url"
             name="website"
             value={this.state.website}
             onChange={this.handleWebsiteChange}
@@ -161,7 +202,7 @@ class Profile extends Component {
           />
           <label>Music:</label>
           <input
-            type="text"
+            type="url"
             name="music"
             value={this.state.music}
             onChange={this.handleMusicChange}
@@ -169,7 +210,7 @@ class Profile extends Component {
           />
           <label>Video:</label>
           <input
-            type="text"
+            type="url"
             name="video"
             value={this.state.video}
             onChange={this.handleVideoChange}

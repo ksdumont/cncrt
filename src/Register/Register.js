@@ -26,7 +26,7 @@ class Register extends Component {
         username, 
         password
     }
-    this.context.artists.push(newArtist)
+    this.context.artists = [...this.context.artists, newArtist]
     this.props.history.push(`/profile/${id}`);
   };
   handleNameChange = e => {

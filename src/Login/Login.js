@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "./Login.css";
 import { Link } from "react-router-dom";
+import CncrtContext from "../CncrtContext";
 
 class Login extends Component {
+  static contextType = CncrtContext;
   constructor(props) {
     super(props);
     this.state = {
@@ -12,7 +14,16 @@ class Login extends Component {
   }
   handleSubmit = e => {
     e.preventDefault();
-    this.props.history.push(`/profile`);
+    let user;
+    const { username, password } = this.state;
+    if(!this.context.artists.find(artist => artist.username === username)) {
+        return alert('User does not exist')
+    } else if (user = this.context.artists.find(artist => artist.username === username)) {
+        if (user.password !== password) {
+            return alert('wrong password')
+        }
+    }
+    this.props.history.push(`/profile/${user.id}`);
   };
   handleUserNameChange = e => {
     const username = e.target.value;
@@ -44,7 +55,7 @@ class Login extends Component {
           />
           <label>Password:</label>
           <input
-            type="text"
+            type="password"
             name="password"
             value={this.state.password}
             onChange={this.handlePasswordChange}
