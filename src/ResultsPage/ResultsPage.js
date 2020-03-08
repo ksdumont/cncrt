@@ -8,11 +8,24 @@ class ResultsPage extends Component {
   static contextType = CncrtContext;
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      searchText: ""
+    };
   }
-
   handleSubmit = e => {
     e.preventDefault();
+    let { searchText } = this.state;
+    searchText = searchText.toLowerCase().trim();
+    this.props.history.push({
+      pathname: "/results",
+      search: `?query=${searchText}`
+    });
+  };
+  handleSearchTextChange = e => {
+    const searchText = e.target.value;
+    this.setState({
+      searchText
+    });
   };
   handleClick = id => {
     this.props.history.push(`/results/${id}`);
@@ -23,7 +36,12 @@ class ResultsPage extends Component {
         <Link to="/">CNCRT</Link>
         <form className="searchForm" onSubmit={this.handleSubmit}>
           <label>Search Artists</label>
-          <input type="text" placeholder="City or Zipcode" />
+          <input
+            type="text"
+            placeholder="City or Zipcode"
+            value={this.state.searchText}
+            onChange={this.handleSearchTextChange}
+          />
           <button type="submit">Search</button>
         </form>
         <section className="results">

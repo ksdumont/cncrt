@@ -2,16 +2,36 @@ import React, { Component } from "react";
 import "./LandingPage.css";
 import { Link } from "react-router-dom";
 import CncrtContext from "../CncrtContext";
+import ResultsPage from "../ResultsPage/ResultsPage";
 
 class LandingPage extends Component {
   static contextType = CncrtContext;
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      searchText: ""
+    };
   }
-  handleClick = e => {
+  handleSubmit = e => {
     e.preventDefault();
-    this.props.history.push(`/results`);
+    let { searchText } = this.state;
+    searchText = searchText.toLowerCase().trim();
+    this.props.history.push({
+      pathname: "/results",
+      search: `?query=${searchText}`
+    });
+  };
+
+  // const artistSearchResults = this.context.artists.filter(
+  //   artist => artist.location.trim().toLowerCase() === searchText
+  // );
+  // return <ResultsPage artists={artistSearchResults} />;
+
+  handleSearchTextChange = e => {
+    const searchText = e.target.value;
+    this.setState({
+      searchText
+    });
   };
   render() {
     return (
@@ -32,12 +52,15 @@ class LandingPage extends Component {
           </h3>
         </section>
 
-        <form className="landingSearch">
+        <form className="landingSearch" onSubmit={this.handleSubmit}>
           <label>Search for artists by city or zip code:</label>
-          <input className="landingSearchText" type="text" />
-          <button className="landingSearchButton" onClick={this.handleClick}>
-            Search
-          </button>
+          <input
+            className="landingSearchText"
+            type="text"
+            value={this.state.searchText}
+            onChange={this.handleSearchTextChange}
+          />
+          <button className="landingSearchButton">Search</button>
         </form>
       </div>
     );
