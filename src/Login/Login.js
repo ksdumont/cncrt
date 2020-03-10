@@ -23,7 +23,7 @@ class Login extends Component {
             return alert('wrong password')
         }
     }
-    this.props.history.push(`/profile/${user.id}`);
+    this.props.history.push(`/results/${user.id}`);
   };
   handleUserNameChange = e => {
     const username = e.target.value;

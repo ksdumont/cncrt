@@ -19,6 +19,11 @@
   font-size: 14px;
   border: solid 1px black;
 }
+.result-message {
+    text-align: center;
+    margin: 10px auto;
+    width: 90%;
+}
 .resultsList {
   list-style: none;
   display: flex;

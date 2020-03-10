@@ -5,16 +5,24 @@ import Register from "./Register/Register";
 import LandingPage from "./LandingPage/LandingPage";
 import ResultsArtist from "./ResultsArtist/ResultsArtist";
 import ResultsPage from "./ResultsPage/ResultsPage";
-import Profile from "./Profile/Profile"
+import Profile from "./Profile/Profile";
 import CncrtContext from "./CncrtContext";
-import store from "./store"
+import store from "./store";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      artists: store
+      artists: store,
+      addArtist: newArtist =>
+        this.setState({ artists: [...this.state.artists, newArtist] }),
+      updateArtist: (artistUpdate, artistId) =>
+        this.setState({
+          artists: this.state.artists.map(artist =>
+            artist.id !== artistId ? artist : artistUpdate
+          )
+        })
     };
   }
   render() {
@@ -27,7 +35,11 @@ class App extends Component {
               <Route exact path="/register" component={Register} />
               <Route exact path="/results" component={ResultsPage} />
               <Route exact path="/profile/:artistId" component={Profile} />
-              <Route exact path="/results/:artistId" component={ResultsArtist} />
+              <Route
+                exact
+                path="/results/:artistId"
+                component={ResultsArtist}
+              />
               <Route exact path="/" component={LandingPage} />
             </Switch>
           </BrowserRouter>

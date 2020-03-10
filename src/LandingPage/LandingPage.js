@@ -22,11 +22,6 @@ class LandingPage extends Component {
     });
   };
 
-  // const artistSearchResults = this.context.artists.filter(
-  //   artist => artist.location.trim().toLowerCase() === searchText
-  // );
-  // return <ResultsPage artists={artistSearchResults} />;
-
   handleSearchTextChange = e => {
     const searchText = e.target.value;
     this.setState({
@@ -53,12 +48,13 @@ class LandingPage extends Component {
         </section>
 
         <form className="landingSearch" onSubmit={this.handleSubmit}>
-          <label>Search for artists by city or zip code:</label>
+          <label>Search for artists by city:</label>
           <input
             className="landingSearchText"
             type="text"
             value={this.state.searchText}
             onChange={this.handleSearchTextChange}
+            required
           />
           <button className="landingSearchButton">Search</button>
         </form>

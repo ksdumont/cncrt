@@ -1,6 +1,6 @@
 const store = [
   {
-    id: 1,
+    id: "1",
     name: "Zeke Finn",
     email: "zekefinnmusic@gmail.com",
     username: "zekefinn",
@@ -18,7 +18,7 @@ const store = [
     contact: "zekefinnmusic@gmail.com"
   },
   {
-    id: 2,
+    id: "2",
     name: "Thom Yorke",
     email: "thomyorke@gmail.com",
     username: "thomyorke",
@@ -36,7 +36,7 @@ const store = [
     contact: "thomyorke@gmail.com"
   },
   {
-    id: 3,
+    id: "3",
     name: "Kendrick Lamar",
     email: "kendricklamar@gmail.com",
     username: "kendricklamar",

@@ -17,16 +17,16 @@ class Register extends Component {
   }
   handleSubmit = e => {
     e.preventDefault();
-    const {name, email, username, password} = this.state;
+    const { name, email, username, password } = this.state;
     const id = uuidv4();
     const newArtist = {
-        id,
-        name,
-        email,
-        username, 
-        password
-    }
-    this.context.artists = [...this.context.artists, newArtist]
+      id,
+      name,
+      email,
+      username,
+      password
+    };
+    this.context.addArtist(newArtist);
     this.props.history.push(`/profile/${id}`);
   };
   handleNameChange = e => {

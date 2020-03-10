@@ -11,9 +11,8 @@ class ResultsArtist extends Component {
   }
   render() {
     const artistData = this.context.artists.find(
-      artist => artist.id === Number(this.props.match.params.artistId) //need to add Number()
+      artist => artist.id === this.props.match.params.artistId
     );
-    console.log(artistData);
     return (
       <div className="profilePage">
         <Link to="/results" className="cncrtNav">
@@ -28,15 +27,21 @@ class ResultsArtist extends Component {
           <div>{artistData.bio}</div>
           <div className="website">Link to Website:</div>
           <div>
-            <Link to={artistData.website}>{artistData.website}</Link>
+            <a href={artistData.website} target="_blank">
+              {artistData.website}
+            </a>
           </div>
           <div className="music">Link to Music:</div>
           <div>
-            <Link to={artistData.music}>{artistData.music}</Link>
+            <a href={artistData.music} target="_blank">
+              {artistData.music}
+            </a>
           </div>
           <div className="video">Link to Video:</div>
           <div>
-            <Link to={artistData.video}>{artistData.video}</Link>
+            <a href={artistData.video} target="_blank">
+              {artistData.video}
+            </a>
           </div>
           <div className="rate">Hourly Rate:</div>
           <div>{artistData.rate}</div>
@@ -45,7 +50,7 @@ class ResultsArtist extends Component {
           <div className="travel-distance">Willing to travel:</div>
           <div>{artistData.travel ? "Yes" : null}</div>
           <div className="contact">Contact:</div>
-          <div>{artistData.contact}</div>
+          <div>{artistData.email}</div>
         </section>
       </div>
     );
