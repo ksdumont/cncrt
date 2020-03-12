@@ -44,7 +44,7 @@ class Profile extends Component {
       contact
     };
     const artistFind = this.context.artists.find(
-      artist => artist.id == this.props.match.params.artistId
+      artist => artist.id === Number(this.props.match.params.artistId)
     );
     const artistUpdate = { ...artistFind, ...updatedUserProfile };
     this.context.updateArtist(artistUpdate, artistFind.id);
@@ -100,8 +100,10 @@ class Profile extends Component {
   };
   render() {
     const currentArtist = this.context.artists.find(
-      artist => artist.id === this.props.match.params.artistId
+      artist => artist.id === Number(this.props.match.params.artistId)
     );
+    console.log(this.context.artists)
+    console.log(this.props.match.params.artistId)
     return (
       <div className="profile">
         <Link to="/">CNCRT</Link>

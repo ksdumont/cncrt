@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./Register.css";
 import { Link } from "react-router-dom";
 import CncrtContext from "../CncrtContext";
-import { v4 as uuidv4 } from "uuid";
 
 class Register extends Component {
   static contextType = CncrtContext;
@@ -18,17 +17,16 @@ class Register extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, email, username, password } = this.state;
-    const id = uuidv4();
     const newArtist = {
-      id,
       name,
       email,
       username,
       password
     };
-    this.context.addArtist(newArtist);
-    this.props.history.push(`/profile/${id}`);
-  };
+    this.context.addArtist(newArtist, id => 
+        this.props.history.push(`/profile/${id}`)
+    )
+  }
   handleNameChange = e => {
     const name = e.target.value;
     this.setState({

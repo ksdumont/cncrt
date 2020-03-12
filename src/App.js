@@ -7,25 +7,60 @@ import ResultsArtist from "./ResultsArtist/ResultsArtist";
 import ResultsPage from "./ResultsPage/ResultsPage";
 import Profile from "./Profile/Profile";
 import CncrtContext from "./CncrtContext";
-import store from "./store";
+import config from "./config"
 import "./App.css";
+require('dotenv').config()
+
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      artists: store,
-      addArtist: newArtist =>
-        this.setState({ artists: [...this.state.artists, newArtist] }),
+      artists: [],
+      addArtist: (newArtist, cb) => {
+         fetch(`${config.API_BASE_URL}/api/artists`, {
+          method: 'POST',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(newArtist),
+      })
+      .then(res => res.json())
+      .then(newArtist => 
+        this.setState({artists: [...this.state.artists, newArtist]}, cb(newArtist.id)))
+        .catch(error => {
+          console.error({error});
+        })
+      },
       updateArtist: (artistUpdate, artistId) =>
         this.setState({
           artists: this.state.artists.map(artist =>
             artist.id !== artistId ? artist : artistUpdate
           )
-        })
-    };
+        }),
+        getAllArtists: () => {
+          fetch(`${config.API_BASE_URL}/api/artists`)
+    .then(res => res.json()) 
+    .then(artists => 
+      this.setState({
+        artists,
+      }))
+    }
+    }
+  }
+  componentDidMount() {
+    fetch(`${config.API_BASE_URL}/api/artists`)
+    .then(res => res.json()) 
+    .then(artists => 
+      this.setState({
+        artists,
+      }))
+    .catch(error => 
+      console.error({ error })
+    )
   }
   render() {
+    console.log(this.state.artists)
     return (
       <CncrtContext.Provider value={this.state}>
         <div>

@@ -38,7 +38,9 @@ class ResultsPage extends Component {
   render() {
     const location = this.props.location.search.substring(7);
     const artistResults = this.context.artists.filter(
-      artist => artist.location.toLowerCase().trim() === location
+      artist => artist.location !== null ? 
+          artist.location.toLowerCase().trim() === location
+      : null
     );
     let artists;
     if (artistResults.length === 0) {
