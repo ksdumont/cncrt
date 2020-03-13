@@ -48,8 +48,8 @@ class Profile extends Component {
     );
     // const updatedArtist = {...artistFind, ...updatedUserProfile}
     this.context.updateArtist(updatedUserProfile, artistFind.id, () => {
-        this.props.history.push(`/results/${artistFind.id}`)
-    })
+      this.props.history.push(`/results/${artistFind.id}`);
+    });
   };
   handleImageChange = e => {
     const image = e.target.value;
@@ -104,8 +104,8 @@ class Profile extends Component {
       artist => artist.id === Number(this.props.match.params.artistId)
     );
     if (!currentArtist) {
-        return <div></div>
-    };
+      return <div></div>;
+    }
     return (
       <div className="profile">
         <Link to="/">CNCRT</Link>

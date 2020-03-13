@@ -10,7 +10,7 @@ class ResultsPage extends Component {
     super(props);
     this.state = {
       searchText: "",
-      formSubmitted: false,
+      formSubmitted: false
     };
   }
   handleSubmit = e => {
@@ -37,10 +37,10 @@ class ResultsPage extends Component {
   };
   render() {
     const location = this.props.location.search.substring(7);
-    const artistResults = this.context.artists.filter(
-      artist => artist.location !== null ? 
-          artist.location.toLowerCase().trim() === location
-      : null
+    const artistResults = this.context.artists.filter(artist =>
+      artist.location !== null
+        ? artist.location.toLowerCase().trim() === location
+        : null
     );
     let artists;
     if (artistResults.length === 0) {
@@ -67,7 +67,9 @@ class ResultsPage extends Component {
             No artists were found in your city but check out these artists who
             are willing to travel to you!
           </div>
-        ) : ""}
+        ) : (
+          ""
+        )}
         <section className="results">
           <ul className="resultsList">
             {artists.map(artist => (

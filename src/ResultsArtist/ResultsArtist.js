@@ -14,7 +14,7 @@ class ResultsArtist extends Component {
       artist => artist.id === Number(this.props.match.params.artistId)
     );
     if (!artistData) {
-      return <div></div>
+      return <div></div>;
     }
     return (
       <div className="profilePage">

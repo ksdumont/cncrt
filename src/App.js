@@ -7,10 +7,9 @@ import ResultsArtist from "./ResultsArtist/ResultsArtist";
 import ResultsPage from "./ResultsPage/ResultsPage";
 import Profile from "./Profile/Profile";
 import CncrtContext from "./CncrtContext";
-import config from "./config"
+import config from "./config";
 import "./App.css";
-require('dotenv').config()
-
+require("dotenv").config();
 
 class App extends Component {
   constructor() {
@@ -18,54 +17,58 @@ class App extends Component {
     this.state = {
       artists: [],
       addArtist: (newArtist, cb) => {
-         fetch(`${config.API_BASE_URL}/api/artists`, {
-          method: 'POST',
+        fetch(`${config.API_BASE_URL}/api/artists`, {
+          method: "POST",
           headers: {
-              'content-type': 'application/json'
+            "content-type": "application/json"
           },
-          body: JSON.stringify(newArtist),
-      })
-      .then(res => res.json())
-      .then(newArtist => 
-        this.setState({artists: [...this.state.artists, newArtist]}, cb(newArtist.id)))
-        .catch(error => {
-          console.error({error});
+          body: JSON.stringify(newArtist)
         })
+          .then(res => res.json())
+          .then(newArtist =>
+            this.setState(
+              { artists: [...this.state.artists, newArtist] },
+              cb(newArtist.id)
+            )
+          )
+          .catch(error => {
+            console.error({ error });
+          });
       },
       updateArtist: (artistUpdate, artistId, cb) => {
-          fetch(`${config.API_BASE_URL}/api/artists/${artistId}`, {
-          method: 'PATCH',
+        fetch(`${config.API_BASE_URL}/api/artists/${artistId}`, {
+          method: "PATCH",
           headers: {
-              'content-type': 'application/json'
+            "content-type": "application/json"
           },
-          body: JSON.stringify(artistUpdate),
-      })
-      .then(res => {
-        if (res.status === 204) {
-          fetch(`${config.API_BASE_URL}/api/artists`)
-          .then(res => res.json())
-          .then(artists => {
-            this.setState({
-              artists,
-            }, cb(artistId))
-          })
-                  .catch(error => 
-          console.error({error}))
-        }
-      })
-        } 
+          body: JSON.stringify(artistUpdate)
+        }).then(res => {
+          if (res.status === 204) {
+            fetch(`${config.API_BASE_URL}/api/artists`)
+              .then(res => res.json())
+              .then(artists => {
+                this.setState(
+                  {
+                    artists
+                  },
+                  cb(artistId)
+                );
+              })
+              .catch(error => console.error({ error }));
+          }
+        });
       }
-    }
+    };
+  }
   componentDidMount() {
     fetch(`${config.API_BASE_URL}/api/artists`)
-    .then(res => res.json()) 
-    .then(artists => 
-      this.setState({
-        artists,
-      }))
-    .catch(error => 
-      console.error({ error })
-    )
+      .then(res => res.json())
+      .then(artists =>
+        this.setState({
+          artists
+        })
+      )
+      .catch(error => console.error({ error }));
   }
   render() {
     return (

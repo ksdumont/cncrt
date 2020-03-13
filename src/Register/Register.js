@@ -23,10 +23,10 @@ class Register extends Component {
       username,
       password
     };
-    this.context.addArtist(newArtist, id => 
-        this.props.history.push(`/profile/${id}`)
-    )
-  }
+    this.context.addArtist(newArtist, id =>
+      this.props.history.push(`/profile/${id}`)
+    );
+  };
   handleNameChange = e => {
     const name = e.target.value;
     this.setState({

@@ -16,12 +16,14 @@ class Login extends Component {
     e.preventDefault();
     let user;
     const { username, password } = this.state;
-    if(!this.context.artists.find(artist => artist.username === username)) {
-        return alert('User does not exist')
-    } else if (user = this.context.artists.find(artist => artist.username === username)) {
-        if (user.password !== password) {
-            return alert('wrong password')
-        }
+    if (!this.context.artists.find(artist => artist.username === username)) {
+      return alert("User does not exist");
+    } else if (
+      (user = this.context.artists.find(artist => artist.username === username))
+    ) {
+      if (user.password !== password) {
+        return alert("wrong password");
+      }
     }
     this.props.history.push(`/results/${user.id}`);
   };
