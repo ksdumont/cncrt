@@ -11,7 +11,7 @@ class ResultsArtist extends Component {
   }
   render() {
     const artistData = this.context.artists.find(
-      artist => artist.id === this.props.match.params.artistId
+      artist => artist.id === Number(this.props.match.params.artistId)
     );
     if (!artistData) {
       return <div></div>

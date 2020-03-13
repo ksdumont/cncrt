@@ -46,8 +46,10 @@ class Profile extends Component {
     const artistFind = this.context.artists.find(
       artist => artist.id === Number(this.props.match.params.artistId)
     );
-    this.context.updateArtist(updatedUserProfile, artistFind.id,
-    this.props.history.push(`/results/${artistFind.id}`))
+    // const updatedArtist = {...artistFind, ...updatedUserProfile}
+    this.context.updateArtist(updatedUserProfile, artistFind.id, () => {
+        this.props.history.push(`/results/${artistFind.id}`)
+    })
   };
   handleImageChange = e => {
     const image = e.target.value;

@@ -40,17 +40,22 @@ class App extends Component {
           },
           body: JSON.stringify(artistUpdate),
       })
-      .then(res => res.json())
-      .then(updatedArtist => 
-                this.setState({
-          artists: [...this.state.artists, updatedArtist]
-        }, cb(artistId)))
-                .catch(error => {
-          console.error({error});
-        }) 
+      .then(res => {
+        if (res.status === 204) {
+          fetch(`${config.API_BASE_URL}/api/artists`)
+          .then(res => res.json())
+          .then(artists => {
+            this.setState({
+              artists,
+            }, cb(artistId))
+          })
+                  .catch(error => 
+          console.error({error}))
+        }
+      })
+        } 
       }
     }
-  }
   componentDidMount() {
     fetch(`${config.API_BASE_URL}/api/artists`)
     .then(res => res.json()) 
