@@ -19,6 +19,12 @@
   border: solid 1px black;
   font-size: 20px;
 }
+.error-message {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+  color: red;
+}
 .loginSubmitButton {
   margin: 30px;
   font-size: 26px;

@@ -120,14 +120,9 @@ class Profile extends Component {
             required
           />
           <label>Bio:</label>
-          <input
-            type="text"
-            name="bio"
-            value={this.state.bio}
-            onChange={this.handleBioChange}
-            required
-          />
-          <label>Website:</label>
+          <textarea rows="6" cols="50" value={this.state.bio} onChange={this.handleBioChange} required></textarea>
+
+          <label>Link to Website:</label>
           <input
             type="url"
             name="website"
@@ -135,7 +130,7 @@ class Profile extends Component {
             onChange={this.handleWebsiteChange}
             required
           />
-          <label>Music:</label>
+          <label>Link to Music:</label>
           <input
             type="url"
             name="music"
@@ -143,7 +138,7 @@ class Profile extends Component {
             onChange={this.handleMusicChange}
             required
           />
-          <label>Video:</label>
+          <label>Link to Video:</label>
           <input
             type="url"
             name="video"

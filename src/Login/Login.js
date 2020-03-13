@@ -9,7 +9,9 @@ class Login extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      userInvalid: false, 
+      passwordInvalid: false
     };
   }
   handleSubmit = e => {
@@ -17,12 +19,22 @@ class Login extends Component {
     let user;
     const { username, password } = this.state;
     if (!this.context.artists.find(artist => artist.username === username)) {
-      return alert("User does not exist");
+      return this.setState({
+        username: "",
+        password: "",
+        userInvalid: true,
+        passwordInvalid: false
+      })
     } else if (
       (user = this.context.artists.find(artist => artist.username === username))
     ) {
       if (user.password !== password) {
-        return alert("wrong password");
+        return this.setState({
+          username: "",
+          password: "",
+          userInvalid: false, 
+          passwordInvalid: true
+        });
       }
     }
     this.props.history.push(`/results/${user.id}`);
@@ -55,6 +67,11 @@ class Login extends Component {
             onChange={this.handleUserNameChange}
             required
           />
+          {this.state.userInvalid ? (
+            <div className="error-message">User Does Not Exist</div>
+          ) : (
+            ""
+          )}
           <label>Password:</label>
           <input
             type="password"
@@ -63,6 +80,11 @@ class Login extends Component {
             onChange={this.handlePasswordChange}
             required
           />
+          {this.state.passwordInvalid ? (
+            <div className="error-message">Incorrect Password</div>
+          ) : (
+            ""
+          )}
           <button type="submit" className="loginSubmitButton">
             Login
           </button>

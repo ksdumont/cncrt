@@ -30,19 +30,31 @@ class ResultsArtist extends Component {
           <div>{artistData.bio}</div>
           <div className="website">Link to Website:</div>
           <div>
-            <a href={artistData.website} target="_blank">
+            <a
+              href={artistData.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {artistData.website}
             </a>
           </div>
           <div className="music">Link to Music:</div>
           <div>
-            <a href={artistData.music} target="_blank">
+            <a
+              href={artistData.music}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {artistData.music}
             </a>
           </div>
           <div className="video">Link to Video:</div>
           <div>
-            <a href={artistData.video} target="_blank">
+            <a
+              href={artistData.video}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {artistData.video}
             </a>
           </div>

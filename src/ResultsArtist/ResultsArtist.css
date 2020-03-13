@@ -10,6 +10,7 @@
 }
 .imageName > h1 {
   font-size: 46px;
+  margin-left: 5px;
 }
 .content {
     display: flex;
@@ -18,7 +19,7 @@
     align-items: center;
     margin: 10px auto;
     text-align: center;
-    width: 90%;
+    width: 80%;
 }
 .bio,
 .music,

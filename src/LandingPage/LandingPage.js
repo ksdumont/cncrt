@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./LandingPage.css";
 import { Link } from "react-router-dom";
 import CncrtContext from "../CncrtContext";
-import ResultsPage from "../ResultsPage/ResultsPage";
 
 class LandingPage extends Component {
   static contextType = CncrtContext;
