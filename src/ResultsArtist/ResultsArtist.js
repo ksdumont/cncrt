@@ -13,6 +13,9 @@ class ResultsArtist extends Component {
     const artistData = this.context.artists.find(
       artist => artist.id === this.props.match.params.artistId
     );
+    if (!artistData) {
+      return <div></div>
+    }
     return (
       <div className="profilePage">
         <Link to="/results" className="cncrtNav">

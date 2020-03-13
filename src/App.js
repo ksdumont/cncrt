@@ -32,20 +32,23 @@ class App extends Component {
           console.error({error});
         })
       },
-      updateArtist: (artistUpdate, artistId) =>
-        this.setState({
-          artists: this.state.artists.map(artist =>
-            artist.id !== artistId ? artist : artistUpdate
-          )
-        }),
-        getAllArtists: () => {
-          fetch(`${config.API_BASE_URL}/api/artists`)
-    .then(res => res.json()) 
-    .then(artists => 
-      this.setState({
-        artists,
-      }))
-    }
+      updateArtist: (artistUpdate, artistId, cb) => {
+          fetch(`${config.API_BASE_URL}/api/artists/${artistId}`, {
+          method: 'PATCH',
+          headers: {
+              'content-type': 'application/json'
+          },
+          body: JSON.stringify(artistUpdate),
+      })
+      .then(res => res.json())
+      .then(updatedArtist => 
+                this.setState({
+          artists: [...this.state.artists, updatedArtist]
+        }, cb(artistId)))
+                .catch(error => {
+          console.error({error});
+        }) 
+      }
     }
   }
   componentDidMount() {
@@ -60,7 +63,6 @@ class App extends Component {
     )
   }
   render() {
-    console.log(this.state.artists)
     return (
       <CncrtContext.Provider value={this.state}>
         <div>
