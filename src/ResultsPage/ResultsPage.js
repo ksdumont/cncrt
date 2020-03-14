@@ -50,7 +50,9 @@ class ResultsPage extends Component {
     }
     return (
       <div className="resultsPage">
-        <Link to="/">CNCRT</Link>
+        <Link to="/" className="results-nav">
+          CNCRT
+        </Link>
         <form className="searchForm" onSubmit={this.handleSubmit}>
           <label>Search Artists</label>
           <input

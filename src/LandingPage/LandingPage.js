@@ -38,7 +38,7 @@ class LandingPage extends Component {
         <h1 className="landingTitle">CNCRT</h1>
 
         <section className="description">
-          <h3>
+          <h3 className="description-text">
             CNCRT directly connects users with artists to book for an intimate
             concert. Search local artist profiles in your area to book a concert
             in your home for you and your friends. Register as an artist to
@@ -47,13 +47,14 @@ class LandingPage extends Component {
         </section>
 
         <form className="landingSearch" onSubmit={this.handleSubmit}>
-          <label>Search for artists by city:</label>
+          <label>Search Artists</label>
           <input
             className="landingSearchText"
             type="text"
             value={this.state.searchText}
             onChange={this.handleSearchTextChange}
             required
+            placeholder="City"
           />
           <button className="landingSearchButton">Search</button>
         </form>

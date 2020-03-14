@@ -18,7 +18,7 @@ class ResultsArtist extends Component {
     }
     return (
       <div className="profilePage">
-        <Link to="/results" className="cncrtNav">
+        <Link className="results-nav" to="/results">
           CNCRT
         </Link>
         <section className="imageName">
