@@ -1,7 +1,15 @@
 .registerTitle {
   text-align: center;
   margin: 50px;
-  font-size: 56px;
+  font-size: 66px;
+  color: dimgray;
+}
+.register-nav {
+  font-size: 20px;
+  color: white;
+}
+.register-nav:hover {
+  color: rgb(244, 224, 194);
 }
 .registrationForm {
   margin: 40px auto;
@@ -13,6 +21,7 @@
 .registrationForm > label {
   margin: 10px;
   font-size: 26px;
+  color: white;
 }
 .registrationForm > input {
   padding: 10px;
@@ -24,4 +33,7 @@
   font-size: 26px;
   padding: 5px 20px;
   border: solid 1px black;
+  background-color: white;
+  color: dimgray;
 }
+

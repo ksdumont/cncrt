@@ -55,7 +55,7 @@ class Register extends Component {
   render() {
     return (
       <div className="register">
-        <Link to="/">CNCRT</Link>
+        <Link className="register-nav" to="/">CNCRT</Link>
         <h1 className="registerTitle">CNCRT</h1>
 
         <form className="registrationForm" onSubmit={this.handleSubmit}>

@@ -108,7 +108,7 @@ class Profile extends Component {
     }
     return (
       <div className="profile">
-        <Link to="/">CNCRT</Link>
+        <Link className="profile-nav" to="/">CNCRT</Link>
         <h1 className="artist-name">{currentArtist.name}</h1>
         <form className="profile-form" onSubmit={this.handleSubmit}>
           <label>Link to Image:</label>

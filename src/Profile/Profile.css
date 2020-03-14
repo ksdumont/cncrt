@@ -2,6 +2,12 @@
   text-align: center;
   margin: 20px;
   font-size: 56px;
+  text-transform: uppercase;
+  color: dimgray;
+}
+.profile-nav {
+  font-size: 22px;
+  color: white;
 }
 .profile-form {
   margin: 10px auto;
@@ -9,12 +15,12 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  border: solid 1px black;
   width: 90%;
 }
 .profile-form > label {
   margin: 5px;
   font-size: 18px;
+  color: white;
 }
 .profile-form > input {
   padding: 10px;
@@ -26,4 +32,6 @@
   font-size: 26px;
   padding: 5px 20px;
   border: solid 1px black;
+  background-color: white;
+  color: dimgray;
 }

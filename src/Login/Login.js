@@ -54,7 +54,7 @@ class Login extends Component {
   render() {
     return (
       <div className="loginPage">
-        <Link to="/">CNCRT</Link>
+        <Link className="login-nav" to="/">CNCRT</Link>
 
         <h1 className="loginTitle">CNCRT</h1>
 

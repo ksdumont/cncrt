@@ -5,6 +5,12 @@ body {
   box-sizing: border-box;
   font-family: "Quicksand", sans-serif;
 }
+a:hover {
+  background-color: rgb(240, 200, 131);
+}
+button:hover {
+  background-color: rgb(240, 200, 131);
+}
 
 .landingNav {
   display: flex;
@@ -15,22 +21,23 @@ body {
 
 .landingNav > a {
   margin: 0 10px;
-  color: white;
+  color: dimgray;
   text-decoration: none;
 }
 .landingTitle {
   text-align: center;
   margin-top: 50px;
-  font-size: 60px;
-  color: dimgray;
+  font-size: 80px;
+  color: white;
 }
 .description {
-  margin: 50px 20px;
+  margin: 50px auto;
   text-align: center;
   border: solid 1px black;
   padding: 10px;
   background: white;
   opacity: 0.8;
+  width: 70%;
 }
 .description-text {
   color: dimgray;

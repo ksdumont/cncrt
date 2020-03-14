@@ -60,10 +60,22 @@
   color: dimgray;
   width: 260px;
 }
+.resultsList > li:hover {
+  border: solid 3px rgb(240, 200, 131);
+}
+a:hover {
+  background-color: rgb(240, 200, 131);
+}
+button:hover {
+  background-color: rgb(240, 200, 131);
+}
 @media only screen and (min-width: 600px) {
   .resultsList {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  .result-message {
+    width: 60%
   }
 }
 
