@@ -3,7 +3,8 @@ body {
 }
 * {
   box-sizing: border-box;
-  font-family: Circular, Helvetica, Arial, sans-serif;
+  font-family: "Raleway", sans-serif;
+  /* font-family: Circular, Helvetica, Arial, sans-serif; */
 }
 a:hover {
   color: #b3b3b3;
@@ -11,25 +12,28 @@ a:hover {
 .landingNav {
   display: flex;
   justify-content: flex-end;
-  font-size: 18px;
+  font-size: 22px;
   color: #b3b3b3;
 }
-
+.line {
+  font-size: 22px;
+  margin: 10px;
+}
 .landingNav > a {
-  margin: 0 10px;
+  margin: 10px;
   color: white;
   text-decoration: none;
 }
 .landingTitle {
   text-align: center;
-  margin-top: 50px;
-  font-size: 80px;
+  margin: 5px auto;
+  font-size: 88px;
   color: white;
 }
 .description {
-  margin: 40px auto;
+  margin: 30px auto;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
   background: #282828;
   color: white;
   opacity: 0.8;
@@ -37,37 +41,75 @@ a:hover {
 }
 .description-text {
   color: white;
-  line-height: 30px;
+  line-height: 28px;
   font-size: 22px;
   opacity: 1;
 }
-.book-register {
-  display: flex;
-  flex-direction: column;
+.home-register {
   text-align: center;
-  align-items: center;
   font-size: 38px;
-  font-family: "Raleway", sans-serif;
   color: white;
 }
 
 .bookButton {
-  margin: 5px auto;
+  margin: 10px; 
   padding: 5px;
-  width: 200px;
-  font-size: 28px;
+  width: 140px;
+  font-size: 18px;
   border: solid 1px black;
   color: white;
   background-image: linear-gradient(90deg, #af2896, #509bf5);
-  text-align: center;
 }
 .artist-register-link {
   color: white;
   text-decoration: underline;
-  font-size: 20px;
-  margin: 10px auto;
+  font-size: 22px;
+  margin: 0 auto;
   text-align: center;
 }
 .artist-register-link:hover {
   color: #b3b3b3;
 }
+.image-rows {
+  margin-top: 40px;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.image-rows > img {
+  height: 170px;
+  width: 200px;
+  margin: 10px;
+}
+@media only screen and (max-width: 375px) {
+  .image-rows {
+    margin: 20px auto;
+  }
+  .image-rows > img {
+  height: 60px;
+  width: 60px;
+  margin: 5px;
+  }
+}
+@media only screen and (min-width: 375px) and (max-width: 425px) {
+  .image-rows {
+    margin: 20px auto;
+  }
+  .image-rows > img {
+  height: 70px;
+  width: 70px;
+  margin: 5px;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 800px) {
+  .image-rows {
+    margin: 20px auto;
+  }
+  .image-rows > img {
+  height: 100px;
+  width: 100px;
+  margin: 5px;
+  }
+}
+
