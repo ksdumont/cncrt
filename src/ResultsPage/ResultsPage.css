@@ -7,12 +7,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  color: dimgray;
+  margin-right: 5px;
 }
 .searchForm > label {
   margin: 10px;
   font-size: 26px;
-  color: dimgray;
+  color: #b3b3b3;
 }
 .searchForm > input {
   border: solid 1px black;
@@ -20,7 +20,7 @@
   line-height: 26px;
   font-size: 16px;
   padding: 5px;
-  color: dimgray;
+  color: #282828;
 }
 .searchForm > button {
   margin-right: 35px;
@@ -29,8 +29,8 @@
   font-size: 18px;
   width: 100px;
   border: solid 1px black;
-  background: white;
-  color: dimgray;
+  background-image: linear-gradient(90deg, #af2896, #509bf5);
+  color: white;
 }
 .result-message {
     text-align: center;
@@ -39,8 +39,8 @@
     padding: 2px;
     font-size: 16px;
     line-height: 24px;
-    color: dimgray;
-    background: white;
+    color: white;
+    background: #282828;
 }
 .resultsList {
   list-style: none;
@@ -55,19 +55,19 @@
   min-height: 100px;
   text-align: center;
   margin: 10px auto;
-  background-color: white;
+  background-color: #282828;
   opacity: .8;
-  color: dimgray;
+  color: white;
   width: 260px;
 }
 .resultsList > li:hover {
-  border: solid 3px rgb(240, 200, 131);
+  border: solid 1px #b3b3b3;
 }
 a:hover {
-  background-color: rgb(240, 200, 131);
+  color: #b3b3b3;
 }
 button:hover {
-  background-color: rgb(240, 200, 131);
+  color: #b3b3b3;
 }
 @media only screen and (min-width: 600px) {
   .resultsList {

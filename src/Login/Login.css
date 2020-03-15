@@ -2,7 +2,7 @@
   text-align: center;
   margin: 50px;
   font-size: 56px;
-  color: dimgray;
+  color: white;
 }
 .login-nav {
   font-size: 22px;
@@ -18,7 +18,7 @@
 .loginForm > label {
   margin: 10px;
   font-size: 26px;
-  color: white;
+  color: #b3b3b3;
 }
 .loginForm > input {
   padding: 10px;
@@ -36,6 +36,6 @@
   font-size: 26px;
   padding: 5px 20px;
   border: solid 1px black;
-  color: dimgray;
-  background-color: white;
+  color: white;
+  background-image: linear-gradient(90deg, #af2896, #509bf5);
 }

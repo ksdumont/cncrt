@@ -48,7 +48,7 @@ class Profile extends Component {
     );
     // const updatedArtist = {...artistFind, ...updatedUserProfile}
     this.context.updateArtist(updatedUserProfile, artistFind.id, () => {
-      this.props.history.push(`/results/${artistFind.id}`);
+      this.props.history.push(`/results`);
     });
   };
   handleImageChange = e => {

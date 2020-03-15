@@ -14,7 +14,15 @@ class ResultsArtist extends Component {
       artist => artist.id === Number(this.props.match.params.artistId)
     );
     if (!artistData) {
-      return <div></div>;
+      return (
+        <div className="artist-non-exist">
+          <Link to="/results">CNCRT</Link>
+          <h1 className="non-exist-text">Artist Does Not Exist</h1>
+        </div>
+      );
+    }
+    if (artistData.image == null) {
+      this.props.history.push(`/incomplete/${artistData.id}`);
     }
     return (
       <div className="profilePage">
@@ -45,7 +53,7 @@ class ResultsArtist extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {artistData.music}
+              {artistData.name} on Spotify
             </a>
           </div>
           <div className="video">Link to Video:</div>

@@ -6,6 +6,7 @@ import LandingPage from "./LandingPage/LandingPage";
 import ResultsArtist from "./ResultsArtist/ResultsArtist";
 import ResultsPage from "./ResultsPage/ResultsPage";
 import Profile from "./Profile/Profile";
+import IncompleteProfile from "./IncompleteProfile/IncompleteProfile"
 import CncrtContext from "./CncrtContext";
 import config from "./config";
 import "./App.css";
@@ -85,6 +86,7 @@ class App extends Component {
                 path="/results/:artistId"
                 component={ResultsArtist}
               />
+              <Route exact path="/incomplete/:artistId" component={IncompleteProfile} />
               <Route exact path="/" component={LandingPage} />
             </Switch>
           </BrowserRouter>

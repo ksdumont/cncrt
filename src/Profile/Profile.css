@@ -3,7 +3,7 @@
   margin: 20px;
   font-size: 56px;
   text-transform: uppercase;
-  color: dimgray;
+  color: white;
 }
 .profile-nav {
   font-size: 22px;
@@ -20,7 +20,7 @@
 .profile-form > label {
   margin: 5px;
   font-size: 18px;
-  color: white;
+  color: #b3b3b3;
 }
 .profile-form > input {
   padding: 10px;
@@ -32,6 +32,6 @@
   font-size: 26px;
   padding: 5px 20px;
   border: solid 1px black;
-  background-color: white;
-  color: dimgray;
+   color: white;
+  background-image: linear-gradient(90deg, #af2896, #509bf5);
 }

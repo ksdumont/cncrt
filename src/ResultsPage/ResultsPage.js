@@ -48,6 +48,7 @@ class ResultsPage extends Component {
     } else {
       artists = artistResults;
     }
+    
     return (
       <div className="resultsPage">
         <Link to="/" className="results-nav">
@@ -74,7 +75,7 @@ class ResultsPage extends Component {
         )}
         <section className="results">
           <ul className="resultsList">
-            {artists.map(artist => (
+            {artists.filter(artist => artist.image !== null).map(artist => (
               <li key={artist.id} onClick={() => this.handleClick(artist.id)}>
                 <Artist
                   id={artist.id}

@@ -1,6 +1,6 @@
 .profilePage {
-  background: #a0a0a0;
-  opacity: 0.9;
+  background: #282828;
+  opacity: 1;
 }
 .imageName {
   margin: 20px;
@@ -27,7 +27,7 @@
   font-size: 18px;
   text-align: center;
   width: 80%;
-  color: black;
+  color: #b3b3b3;
 }
 .bio,
 .music,
@@ -41,7 +41,16 @@
   color: white;
 }
 a {
-  color: black;
+  color: white;
   text-decoration: none;
+}
+a:hover {
+  color: #b3b3b3;
+}
+.non-exist-text {
+  color: white;
+  text-align: center;
+  margin: 100px auto;
+  font-size: 36px;
 }
 
