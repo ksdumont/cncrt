@@ -1,12 +1,14 @@
 .artist-list {
-    display: flex;
-    justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .artist-list > img {
-    height: 100px;
-    width:  100px;
+  margin: 8px auto;
+  height: 100px;
+  width: 100px;
 }
 .artist-list > h3 {
-    margin: 5px auto;
-    font-size: 26px;
+  margin: 8px auto;
+  font-size: 26px;
 }

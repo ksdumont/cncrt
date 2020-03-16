@@ -63,5 +63,11 @@ a:hover {
   text-align: center;
   margin: 5px auto;
 }
+.imageName > img {
+  margin: 10px auto;
+}
+.imageName > h1 {
+  margin: 5px auto;
+}
 }
 

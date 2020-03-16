@@ -63,7 +63,7 @@ class ResultsArtist extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {artistData.video}
+              {artistData.name} on YouTube
             </a>
           </div>
           <div className="rate">Hourly Rate:</div>
