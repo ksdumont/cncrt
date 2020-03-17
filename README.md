@@ -8,7 +8,7 @@ Welcome to CNCRT. A private intimate concert brought to your home. Book artists 
 
 Search local artists in your city. Contact artist directly. Register as an artist to build your profile, set your rate, and land your first gig!
 
-![](iPlan%20TripHomePage.png)
+![](cncrt:resultspage.png)
 
 #### Technologies Used
 * HTML
