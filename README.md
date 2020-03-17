@@ -2,7 +2,7 @@
 
 Welcome to CNCRT. A private intimate concert brought to your home. Book artists directly!
 
-![](cncrt%20homepage.png)
+![](cncrt:homepage.png)
 
 ### Click [here](https://cncrt.now.sh/) to get started.
 
