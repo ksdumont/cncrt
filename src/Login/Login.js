@@ -54,7 +54,9 @@ class Login extends Component {
   render() {
     return (
       <div className="loginPage">
-        <Link className="login-nav" to="/">CNCRT</Link>
+        <Link className="login-nav" to="/">
+          <img src="./favicon.ico" alt="favicon" />
+        </Link>
 
         <h1 className="loginTitle">CNCRT</h1>
 

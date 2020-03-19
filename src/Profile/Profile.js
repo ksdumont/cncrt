@@ -108,7 +108,9 @@ class Profile extends Component {
     }
     return (
       <div className="profile">
-        <Link className="profile-nav" to="/">CNCRT</Link>
+        <Link className="profile-nav" to="/">
+          <img src="./favicon.ico" alt="favicon" />
+        </Link>
         <h1 className="artist-name">{currentArtist.name}</h1>
         <form className="profile-form" onSubmit={this.handleSubmit}>
           <label>Link to Image:</label>
@@ -120,7 +122,13 @@ class Profile extends Component {
             required
           />
           <label>Bio:</label>
-          <textarea rows="6" cols="50" value={this.state.bio} onChange={this.handleBioChange} required></textarea>
+          <textarea
+            rows="6"
+            cols="50"
+            value={this.state.bio}
+            onChange={this.handleBioChange}
+            required
+          ></textarea>
 
           <label>Link to Website:</label>
           <input

@@ -16,7 +16,9 @@ class ResultsArtist extends Component {
     if (!artistData) {
       return (
         <div className="artist-non-exist">
-          <Link to="/results">CNCRT</Link>
+          <Link to="/results">
+            <img src="./favicon.ico" alt="favicon" />
+          </Link>
           <h1 className="non-exist-text">Artist Does Not Exist</h1>
         </div>
       );
@@ -27,7 +29,7 @@ class ResultsArtist extends Component {
     return (
       <div className="profilePage">
         <Link className="results-nav" to="/results">
-          CNCRT
+          <img src="./favicon.ico" alt="favicon" />
         </Link>
         <section className="imageName">
           <img alt="artist" src={artistData.image} />

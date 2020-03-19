@@ -52,7 +52,7 @@ class ResultsPage extends Component {
     return (
       <div className="resultsPage">
         <Link to="/" className="results-nav">
-          CNCRT
+          <img src="./favicon.ico" alt="favicon" />
         </Link>
         <form className="searchForm" onSubmit={this.handleSubmit}>
           <label>Search Artists</label>
@@ -75,15 +75,17 @@ class ResultsPage extends Component {
         )}
         <section className="results">
           <ul className="resultsList">
-            {artists.filter(artist => artist.image !== null).map(artist => (
-              <li key={artist.id} onClick={() => this.handleClick(artist.id)}>
-                <Artist
-                  id={artist.id}
-                  name={artist.name}
-                  image={artist.image}
-                />
-              </li>
-            ))}
+            {artists
+              .filter(artist => artist.image !== null)
+              .map(artist => (
+                <li key={artist.id} onClick={() => this.handleClick(artist.id)}>
+                  <Artist
+                    id={artist.id}
+                    name={artist.name}
+                    image={artist.image}
+                  />
+                </li>
+              ))}
           </ul>
         </section>
       </div>

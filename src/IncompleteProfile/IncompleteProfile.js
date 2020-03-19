@@ -9,7 +9,9 @@ export default class IncompleteProfile extends Component {
   render() {
     return (
       <div>
-        <Link to="/results">CNCRT</Link>
+        <Link to="/results">
+          <img src="./favicon.ico" alt="favicon" />
+        </Link>
         <div className="incomplete">
           <h1>Incomplete Profile</h1>
           <button
