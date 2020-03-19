@@ -48,11 +48,11 @@ class ResultsPage extends Component {
     } else {
       artists = artistResults;
     }
-    
+
     return (
       <div className="resultsPage">
         <Link to="/" className="results-nav">
-          <img src="./favicon.ico" alt="favicon" />
+          <img src="/favicon.ico" alt="favicon" />
         </Link>
         <form className="searchForm" onSubmit={this.handleSubmit}>
           <label>Search Artists</label>

@@ -109,7 +109,7 @@ class Profile extends Component {
     return (
       <div className="profile">
         <Link className="profile-nav" to="/">
-          <img src="./favicon.ico" alt="favicon" />
+          <img src="/favicon.ico"alt="favicon" />
         </Link>
         <h1 className="artist-name">{currentArtist.name}</h1>
         <form className="profile-form" onSubmit={this.handleSubmit}>

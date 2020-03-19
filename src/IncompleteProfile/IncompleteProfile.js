@@ -10,7 +10,7 @@ export default class IncompleteProfile extends Component {
     return (
       <div>
         <Link to="/results">
-          <img src="./favicon.ico" alt="favicon" />
+          <img src="/favicon.ico" alt="favicon" />
         </Link>
         <div className="incomplete">
           <h1>Incomplete Profile</h1>

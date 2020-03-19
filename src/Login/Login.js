@@ -10,7 +10,7 @@ class Login extends Component {
     this.state = {
       username: "",
       password: "",
-      userInvalid: false, 
+      userInvalid: false,
       passwordInvalid: false
     };
   }
@@ -24,7 +24,7 @@ class Login extends Component {
         password: "",
         userInvalid: true,
         passwordInvalid: false
-      })
+      });
     } else if (
       (user = this.context.artists.find(artist => artist.username === username))
     ) {
@@ -32,7 +32,7 @@ class Login extends Component {
         return this.setState({
           username: "",
           password: "",
-          userInvalid: false, 
+          userInvalid: false,
           passwordInvalid: true
         });
       }
@@ -55,7 +55,7 @@ class Login extends Component {
     return (
       <div className="loginPage">
         <Link className="login-nav" to="/">
-          <img src="./favicon.ico" alt="favicon" />
+          <img src="/favicon.ico" alt="favicon" />
         </Link>
 
         <h1 className="loginTitle">CNCRT</h1>
