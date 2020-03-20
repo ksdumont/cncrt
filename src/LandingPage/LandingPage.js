@@ -25,7 +25,7 @@ class LandingPage extends Component {
         <section className="description">
           <h3 className="description-text">
             A private intimate concert brought to your home. Book artists
-            directly.
+            directly. Demo the app by logging in with username: zekefinn and password: zekefinn.
           </h3>
         </section>
         <section className="image-rows">
